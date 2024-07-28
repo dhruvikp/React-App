@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './ExpenseForm.css'
+import { ExpenseContext } from '../../store/expense-context';
 
 const ExpenseForm = (props) => {
+
+    const {onSaveExpenseData} = useContext(ExpenseContext);
 
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
@@ -29,9 +32,8 @@ const ExpenseForm = (props) => {
         date: new Date(enteredDate)
        }
 
-       props.onSaveExpenseData(expenseData);
+       onSaveExpenseData(expenseData);
        
-
        setEnteredTitle('');
        setEnteredAmount('');
        setEnteredDate('');
