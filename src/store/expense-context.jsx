@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { createContext, useReducer, useState } from "react";
 
 
@@ -17,8 +16,6 @@ export default function ExpenseContextProvider({children}) {
       ];
 
       //const [expenses, setExpenses] = useState(DUMP_EXPENSES);
-
-
 
       function expenseReducer(state, action) {
         const updatedExpenses = [...state]

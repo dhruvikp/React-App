@@ -1,10 +1,14 @@
 import { useContext, useState } from 'react';
 import './ExpenseForm.css'
 import { ExpenseContext } from '../../store/expense-context';
+import { useDispatch } from 'react-redux';
+import { expenseActions } from '../../store/expense-redux';
 
 const ExpenseForm = (props) => {
 
-    const {onSaveExpenseData} = useContext(ExpenseContext);
+    // const {onSaveExpenseData} = useContext(ExpenseContext);
+
+    const dispatch = useDispatch();
 
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
@@ -32,7 +36,8 @@ const ExpenseForm = (props) => {
         date: new Date(enteredDate)
        }
 
-       onSaveExpenseData(expenseData);
+       //onSaveExpenseData(expenseData);
+       dispatch(expenseActions.addExpense(expenseData))
        
        setEnteredTitle('');
        setEnteredAmount('');

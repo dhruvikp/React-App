@@ -17,7 +17,8 @@ const App = () => {
         <ExpenseForm />
       </NewExpense>
 
-      <Expenses />
+       <Expenses /> 
+     
     </div>
   </ExpenseContextProvider>
     
