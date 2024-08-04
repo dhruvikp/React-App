@@ -5,6 +5,7 @@ import NewExpense from './components/NewExpenses/NewExpense';
 import { useState } from 'react';
 import ExpenseForm from './components/NewExpenses/ExpenseForm';
 import ExpenseContextProvider, { ExpenseContext } from './store/expense-context';
+import ExampleComponent from './components/ExampleComponent';
 
 
 const App = () => {
@@ -16,8 +17,9 @@ const App = () => {
       <NewExpense>
         <ExpenseForm />
       </NewExpense>
-
        <Expenses /> 
+
+       <ExampleComponent></ExampleComponent>
      
     </div>
   </ExpenseContextProvider>
